@@ -11,15 +11,21 @@
            <button  id="submit" name ="submit">Valider</button>
     </form>
     <script>
+       //déclaration de la variables
       function nombre(){
+        //récupération des saisies
         var firstNumber = document.getElementById('firstNumber').value;
         var secondNumber = document.getElementById('secondNumber').value;
-        var regex = /[\d]+[\.]?[\d]+/;
-        if((regex.test(firstNumber) == true) && (regex.test(secondNumber) == true) ){
-        firstNumber = parseInt(firstNumber);
-        secondNumber = parseFloat(secondNumber);
-        var result = firstNumber * secondNumber;
-        alert (result);
+        var regex = /[0-9]+[.][0-9]+$/;
+        //test regex
+        if((regex.test(firstNumber) && regex.test(secondNumber)){
+        //ont mets le premier nombre entier à l'intérieur
+        firstNumber = Math.trunc(firstNumber);
+        //on affiche le calcul de firstNumber et de secondNumber
+        alert(firstNumber * secondNumber);*
+        else {
+          alert('saisir un nombre décimal')
+        }
         }
       }
     </script>
